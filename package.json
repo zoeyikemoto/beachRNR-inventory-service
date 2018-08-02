@@ -1,0 +1,24 @@
+{
+  "name": "beachrnr-inventory-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server-dev": "nodemon server/index.js",
+    "test": "\"test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoeyikemoto/beachRNR-inventory-service.git"
+  },
+  "author": "Zoey Ikemoto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zoeyikemoto/beachRNR-inventory-service/issues"
+  },
+  "homepage": "https://github.com/zoeyikemoto/beachRNR-inventory-service#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.3"
+  }
+}
