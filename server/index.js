@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 const inventory = require('../data/mockpagedetail');
+const db = require('../data/index');
+const testListing = require('./testlisting');
 
 app.get('/', (req, res) => res.send('Hello World!'));
 // app.get('/rooms/', (req, res) => {
