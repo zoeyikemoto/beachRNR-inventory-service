@@ -12,7 +12,7 @@ app.get('/', (req, res) => res.send('Hello World!'));
 //   res.send(inventory);
 // });
 app.get('/inventory/:roomId', (req, res) => {
-  db.findListing(parseInt(req.params.roomId), (result)  => {
+  db.findListing(parseInt(req.params.roomId), (result) => {
     result ? res.send(JSON.stringify(result)) : res.status(404).send('Listing not found.');
   });
 });
