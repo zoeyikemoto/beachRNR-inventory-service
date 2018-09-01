@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const queries = require('./queries');
 const Sequelize = require('sequelize');
-
+const datagen = require('./faker/datagen');
 // var connection = mysql.createConnection({
 //   host: "localhost",
 //   user: "beachrnr",
@@ -93,7 +93,7 @@ const Listing = sequelize.define('listing', {
     type: Sequelize.TINYINT
   },
   unitPrice: {
-    type: Sequelize.DECIMAL(7,2)
+    type: Sequelize.STRING
   },
   priceModifier: {
     type: Sequelize.STRING
@@ -169,6 +169,12 @@ module.exports.findListing = (inputId, cb) => {
     where: {id: inputId},
     plain: true,
   }).then(listing => cb(listing));
+};
+
+module.exports.bulkAdd = (quantity, cb) => {
+  Listing.bulkCreate(
+    datagen.generateData(quantity)
+    ).then(newListings => cb(newListings));
 };
 
 // var connection = mysql.createConnection({
